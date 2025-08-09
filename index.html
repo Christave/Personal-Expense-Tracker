@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Personal Expense Tracker</h1>
+            <button id="themeToggle" class="theme-toggle">🌓</button>
+        </header>
+
+        <div class="dashboard">
+            <div class="balance">
+                <h3>Your Balance</h3>
+                <h1 id="balance">FCFA0.00</h1>
+            </div>
+            <div class="summary">
+                <div class="income">
+                    <h4>Income</h4>
+                    <p id="income">FCFA0.00</p>
+                </div>
+                <div class="expense">
+                    <h4>Expense</h4>
+                    <p id="expense">FCFA0.00</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="transaction-form">
+            <h3>Add New Transaction</h3>
+            <form id="transactionForm">
+                <div class="form-control">
+                    <label for="description">Description</label>
+                    <input type="text" id="description" placeholder="Enter description..." required>
+                </div>
+                <div class="form-control">
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" placeholder="Enter amount..." required>
+                </div>
+                <div class="form-control radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="incomeType" name="transactionType" value="income" checked>
+                        <label for="incomeType">Income</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="expenseType" name="transactionType" value="expense">
+                        <label for="expenseType">Expense</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Add Transaction</button>
+            </form>
+        </div>
+
+        <div class="transaction-history">
+            <div class="history-header">
+                <h3>Transaction History</h3>
+                <div class="filter-controls">
+                    <button id="showAll" class="filter-btn active">All</button>
+                    <button id="showIncome" class="filter-btn">Income</button>
+                    <button id="showExpense" class="filter-btn">Expense</button>
+                </div>
+            </div>
+            <ul id="transactionList"></ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
